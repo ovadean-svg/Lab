@@ -1,34 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cookie Demo - MDN</title>
+    <title>Ex 5 (MDN)</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 350px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            margin: 8px 0;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #2d6cdf;
+            color: white;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #1b4fb3;
+        }
+    </style>
+
     <script>
-        // Setare cookie simplu
         function setCookie() {
             document.cookie = "user=student; path=/";
             alert("Cookie setat!");
         }
 
-        // Setare cookie cu expirare
         function setCookieExpire() {
             const d = new Date();
-            d.setTime(d.getTime() + (24*60*60*1000)); // 1 zi
+            d.setTime(d.getTime() + (24*60*60*1000));
             document.cookie = "expiresCookie=test; expires=" + d.toUTCString() + "; path=/";
             alert("Cookie cu expirare setat!");
         }
 
-        // Citire cookies
         function getCookies() {
             alert("Cookie-uri: " + document.cookie);
         }
 
-        // Modificare cookie
         function updateCookie() {
             document.cookie = "user=updatedStudent; path=/";
             alert("Cookie modificat!");
         }
 
-        // Ștergere cookie
         function deleteCookie() {
             document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
             alert("Cookie șters!");
@@ -37,13 +77,14 @@
 </head>
 
 <body>
-    <h1>Bine ai venit la lab</h1>
+    <div class="container">
+        <h1>Ex 5 (MDN)</h1>
 
-    <button onclick="setCookie()">Set Cookie</button>
-    <button onclick="setCookieExpire()">Set Cookie cu expirare</button>
-    <button onclick="getCookies()">Afișează Cookies</button>
-    <button onclick="updateCookie()">Modifică Cookie</button>
-    <button onclick="deleteCookie()">Șterge Cookie</button>
-
+        <button onclick="setCookie()">Set Cookie</button>
+        <button onclick="setCookieExpire()">Set Cookie cu expirare</button>
+        <button onclick="getCookies()">Afișează Cookies</button>
+        <button onclick="updateCookie()">Modifică Cookie</button>
+        <button onclick="deleteCookie()">Șterge Cookie</button>
+    </div>
 </body>
 </html>
