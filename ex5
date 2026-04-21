@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cookie Demo - MDN</title>
+    <script>
+        // SETARE cookie simplu
+        function setCookie() {
+            document.cookie = "user=student; path=/";
+            alert("Cookie setat!");
+        }
+
+        // SETARE cookie cu expirare
+        function setCookieExpire() {
+            const d = new Date();
+            d.setTime(d.getTime() + (24*60*60*1000)); // 1 zi
+            document.cookie = "expiresCookie=test; expires=" + d.toUTCString() + "; path=/";
+            alert("Cookie cu expirare setat!");
+        }
+
+        // CITIRE cookie-uri
+        function getCookies() {
+            alert("Cookie-uri: " + document.cookie);
+        }
+
+        // MODIFICARE cookie
+        function updateCookie() {
+            document.cookie = "user=updatedStudent; path=/";
+            alert("Cookie modificat!");
+        }
+
+        // ȘTERGERE cookie
+        function deleteCookie() {
+            document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            alert("Cookie șters!");
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Exemple document.cookie (MDN)</h1>
+
+    <button onclick="setCookie()">Set Cookie</button>
+    <button onclick="setCookieExpire()">Set Cookie cu expirare</button>
+    <button onclick="getCookies()">Afișează Cookies</button>
+    <button onclick="updateCookie()">Modifică Cookie</button>
+    <button onclick="deleteCookie()">Șterge Cookie</button>
+
+</body>
+</html>
