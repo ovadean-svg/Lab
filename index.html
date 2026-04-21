@@ -19,8 +19,8 @@
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            text-align: center;
             width: 350px;
+            text-align: center;
         }
 
         h1 {
@@ -28,10 +28,17 @@
             font-size: 20px;
         }
 
+        .ex {
+            margin-bottom: 18px;
+        }
+
+        .ex p {
+            margin: 0 0 6px 0;
+            font-weight: bold;
+        }
+
         button {
-            display: block;
             width: 100%;
-            margin: 8px 0;
             padding: 10px;
             border: none;
             border-radius: 8px;
@@ -80,11 +87,31 @@
     <div class="container">
         <h1>Ex 5 (MDN)</h1>
 
-        <button onclick="setCookie()">Set Cookie</button>
-        <button onclick="setCookieExpire()">Set Cookie cu expirare</button>
-        <button onclick="getCookies()">Afișează Cookies</button>
-        <button onclick="updateCookie()">Modifică Cookie</button>
-        <button onclick="deleteCookie()">Șterge Cookie</button>
+        <div class="ex">
+            <p>Exemplul 1 - Set Cookie</p>
+            <button onclick="setCookie()">Rulează</button>
+        </div>
+
+        <div class="ex">
+            <p>Exemplul 2 - Cookie cu expirare</p>
+            <button onclick="setCookieExpire()">Rulează</button>
+        </div>
+
+        <div class="ex">
+            <p>Exemplul 3 - Afișare Cookies</p>
+            <button onclick="getCookies()">Rulează</button>
+        </div>
+
+        <div class="ex">
+            <p>Exemplul 4 - Modificare Cookie</p>
+            <button onclick="updateCookie()">Rulează</button>
+        </div>
+
+        <div class="ex">
+            <p>Exemplul 5 - Ștergere Cookie</p>
+            <button onclick="deleteCookie()">Rulează</button>
+        </div>
+
     </div>
 </body>
 </html>
