@@ -65,6 +65,9 @@
         function setCookies() {
             document.cookie = "name=Oeschger; SameSite=Lax";
             document.cookie = "favorite_food=tripe; SameSite=Lax";
+
+            // 👇 afișare imediată (asta e ce ai cerut)
+            document.getElementById("out1").textContent = document.cookie;
         }
 
         function showCookies() {
@@ -105,6 +108,8 @@
         function deleteCookie() {
             document.cookie = "name=; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Lax";
             document.cookie = "favorite_food=; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Lax";
+
+            document.getElementById("out1").textContent = "";
         }
     </script>
 </head>
@@ -116,13 +121,15 @@
 <div class="ex">
     <p>Exemplul 1 - Set Cookies</p>
     <button class="btn run" onclick="setCookies()">Run</button>
+    <button class="btn clear" onclick="clear1()">Clear</button>
+    <code id="out1"></code>
 </div>
 
 <div class="ex">
     <p>Exemplul 2 - Afișare Cookies</p>
     <button class="btn run" onclick="showCookies()">Run</button>
-    <button class="btn clear" onclick="clear1()">Clear</button>
-    <code id="out1"></code>
+    <button class="btn clear" onclick="clear2()">Clear</button>
+    <code id="out2"></code>
 </div>
 
 <div class="ex">
