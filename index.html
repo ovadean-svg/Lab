@@ -1,101 +1,124 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Ex 5</title>
+    <title>Ex 5 (MDN)</title>
 
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 30px;
+            margin: 20px;
             background: white;
         }
 
         h1 {
-            font-size: 34px;
-            margin-bottom: 30px;
+            font-size: 30px;
+            margin-bottom: 25px;
         }
 
         .ex {
-            margin-bottom: 70px; /* 👈 spațiu mare între exemple */
+            margin-bottom: 50px;
         }
 
         p {
             font-size: 20px;
             font-weight: bold;
-            margin: 0 0 15px 0;
+            margin-bottom: 10px;
         }
 
         button {
-            padding: 12px 18px;
+            padding: 10px 15px;
             font-size: 16px;
             border: none;
             background: #2d6cdf;
             color: white;
             cursor: pointer;
             border-radius: 6px;
+            margin-right: 10px;
         }
 
         button:hover {
             background: #1b4fb3;
         }
+
+        code {
+            display: block;
+            margin-top: 10px;
+            background: #f2f2f2;
+            padding: 10px;
+        }
     </style>
 
     <script>
-        function setCookie() {
-            document.cookie = "user=student; path=/";
-            alert(document.cookie);
+        // SET cookie
+        function setCookies() {
+            document.cookie = "name=Oeschger; SameSite=Lax";
+            document.cookie = "favorite_food=tripe; SameSite=Lax";
         }
 
-        function setCookieExpire() {
-            const d = new Date();
-            d.setTime(d.getTime() + (24*60*60*1000));
-            document.cookie = "expiresCookie=test; expires=" + d.toUTCString() + "; path=/";
-            alert(document.cookie);
+        // SHOW all cookies (MDN style)
+        function showCookies() {
+            document.getElementById("output1").textContent = document.cookie;
         }
 
-        function getCookies() {
-            alert(document.cookie);
+        // CHECK specific cookie (MDN style)
+        function checkCookie() {
+            const exists = document.cookie
+                .split("; ")
+                .find(row => row.startsWith("name="));
+
+            document.getElementById("output2").textContent =
+                exists ? "Cookie 'name' există" : "Cookie 'name' NU există";
         }
 
-        function updateCookie() {
-            document.cookie = "user=updatedStudent; path=/";
-            alert(document.cookie);
+        // GET specific value (MDN style)
+        function getValue() {
+            const value = document.cookie
+                .split("; ")
+                .find(row => row.startsWith("favorite_food="))
+                ?.split("=")[1];
+
+            document.getElementById("output3").textContent =
+                "Valoare favorite_food = " + value;
         }
 
+        // DELETE cookie
         function deleteCookie() {
-            document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-            alert(document.cookie);
+            document.cookie = "name=; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Lax";
+            document.cookie = "favorite_food=; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Lax";
         }
     </script>
 </head>
 
 <body>
 
-<h1>Ex 5</h1>
+<h1>Ex 5 (MDN style)</h1>
 
 <div class="ex">
-    <p>Exemplul 1 - Set Cookie</p>
-    <button onclick="setCookie()">Rulează</button>
+    <p>Exemplul 1 - Set cookies</p>
+    <button onclick="setCookies()">Set Cookies</button>
 </div>
 
 <div class="ex">
-    <p>Exemplul 2 - Cookie cu expirare</p>
-    <button onclick="setCookieExpire()">Rulează</button>
+    <p>Exemplul 2 - Afișare toate cookies</p>
+    <button onclick="showCookies()">Show cookies</button>
+    <code id="output1"></code>
 </div>
 
 <div class="ex">
-    <p>Exemplul 3 - Afișare Cookies</p>
-    <button onclick="getCookies()">Rulează</button>
+    <p>Exemplul 3 - Verificare existență cookie</p>
+    <button onclick="checkCookie()">Check cookie</button>
+    <code id="output2"></code>
 </div>
 
 <div class="ex">
-    <p>Exemplul 4 - Modificare Cookie</p>
-    <button onclick="updateCookie()">Rulează</button>
+    <p>Exemplul 4 - Citire valoare cookie</p>
+    <button onclick="getValue()">Get value</button>
+    <code id="output3"></code>
 </div>
 
 <div class="ex">
-    <p>Exemplul 5 - Ștergere Cookie</p>
-    <button onclick="deleteCookie()">Rulează</button>
+    <p>Exemplul 5 - Ștergere cookies</p>
+    <button onclick="deleteCookie()">Delete cookies</button>
 </div>
 
 </body>
