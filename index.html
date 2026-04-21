@@ -6,48 +6,31 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f4f6f8;
+            margin: 20px;
+            background: white;
         }
 
-        header {
-            background: #2d6cdf;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 22px;
-            font-weight: bold;
-        }
-
-        .container {
-            padding: 30px;
-            max-width: 900px;
-            margin: auto;
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
         }
 
         .ex {
-            background: white;
-            padding: 20px;
-            margin-bottom: 15px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
         }
 
-        .ex p {
-            margin: 0 0 10px 0;
+        p {
             font-weight: bold;
+            margin: 0 0 8px 0;
         }
 
         button {
-            padding: 10px;
-            width: 100%;
+            padding: 10px 15px;
             border: none;
-            border-radius: 8px;
-            cursor: pointer;
             background: #2d6cdf;
             color: white;
-            font-size: 14px;
-            transition: 0.2s;
+            cursor: pointer;
+            border-radius: 6px;
         }
 
         button:hover {
@@ -58,65 +41,59 @@
     <script>
         function setCookie() {
             document.cookie = "user=student; path=/";
-            alert("Cookie setat!");
+            alert(document.cookie);
         }
 
         function setCookieExpire() {
             const d = new Date();
             d.setTime(d.getTime() + (24*60*60*1000));
             document.cookie = "expiresCookie=test; expires=" + d.toUTCString() + "; path=/";
-            alert("Cookie cu expirare setat!");
+            alert(document.cookie);
         }
 
         function getCookies() {
-            alert("Cookie-uri: " + document.cookie);
+            alert(document.cookie);
         }
 
         function updateCookie() {
             document.cookie = "user=updatedStudent; path=/";
-            alert("Cookie modificat!");
+            alert(document.cookie);
         }
 
         function deleteCookie() {
             document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-            alert("Cookie șters!");
+            alert(document.cookie);
         }
     </script>
 </head>
 
 <body>
 
-<header>
-    Ex 5 (MDN) - Document.cookie
-</header>
+<h1>Ex 5 (MDN) - Document.cookie</h1>
 
-<div class="container">
+<div class="ex">
+    <p>Exemplul 1 - Set Cookie</p>
+    <button onclick="setCookie()">Rulează</button>
+</div>
 
-    <div class="ex">
-        <p>Exemplul 1 - Set Cookie</p>
-        <button onclick="setCookie()">Rulează</button>
-    </div>
+<div class="ex">
+    <p>Exemplul 2 - Cookie cu expirare</p>
+    <button onclick="setCookieExpire()">Rulează</button>
+</div>
 
-    <div class="ex">
-        <p>Exemplul 2 - Cookie cu expirare</p>
-        <button onclick="setCookieExpire()">Rulează</button>
-    </div>
+<div class="ex">
+    <p>Exemplul 3 - Afișare Cookies</p>
+    <button onclick="getCookies()">Rulează</button>
+</div>
 
-    <div class="ex">
-        <p>Exemplul 3 - Afișare Cookies</p>
-        <button onclick="getCookies()">Rulează</button>
-    </div>
+<div class="ex">
+    <p>Exemplul 4 - Modificare Cookie</p>
+    <button onclick="updateCookie()">Rulează</button>
+</div>
 
-    <div class="ex">
-        <p>Exemplul 4 - Modificare Cookie</p>
-        <button onclick="updateCookie()">Rulează</button>
-    </div>
-
-    <div class="ex">
-        <p>Exemplul 5 - Ștergere Cookie</p>
-        <button onclick="deleteCookie()">Rulează</button>
-    </div>
-
+<div class="ex">
+    <p>Exemplul 5 - Ștergere Cookie</p>
+    <button onclick="deleteCookie()">Rulează</button>
 </div>
 
 </body>
