@@ -66,12 +66,12 @@
             document.cookie = "name=Oeschger; SameSite=Lax";
             document.cookie = "favorite_food=tripe; SameSite=Lax";
 
-            // 👇 afișare imediată (asta e ce ai cerut)
+            // afișare imediată
             document.getElementById("out1").textContent = document.cookie;
         }
 
         function showCookies() {
-            document.getElementById("out1").textContent = document.cookie;
+            document.getElementById("out2").textContent = document.cookie;
         }
 
         function clear1() {
@@ -83,12 +83,12 @@
                 .split("; ")
                 .find(row => row.startsWith("name="));
 
-            document.getElementById("out2").textContent =
+            document.getElementById("out3").textContent =
                 exists ? "Cookie 'name' există" : "Cookie 'name' NU există";
         }
 
-        function clear2() {
-            document.getElementById("out2").textContent = "";
+        function clear3() {
+            document.getElementById("out3").textContent = "";
         }
 
         function getValue() {
@@ -97,12 +97,12 @@
                 .find(row => row.startsWith("favorite_food="))
                 ?.split("=")[1];
 
-            document.getElementById("out3").textContent =
+            document.getElementById("out4").textContent =
                 "favorite_food = " + value;
         }
 
-        function clear3() {
-            document.getElementById("out3").textContent = "";
+        function clear4() {
+            document.getElementById("out4").textContent = "";
         }
 
         function deleteCookie() {
@@ -120,35 +120,34 @@
 
 <div class="ex">
     <p>Exemplul 1 - Set Cookies</p>
-    <button class="btn run" onclick="setCookies()">Run</button>
+    <button class="btn run" onclick="setCookies()">Rulează</button>
     <button class="btn clear" onclick="clear1()">Clear</button>
     <code id="out1"></code>
 </div>
 
 <div class="ex">
     <p>Exemplul 2 - Afișare Cookies</p>
-    <button class="btn run" onclick="showCookies()">Run</button>
-    <button class="btn clear" onclick="clear2()">Clear</button>
+    <button class="btn run" onclick="showCookies()">Rulează</button>
     <code id="out2"></code>
 </div>
 
 <div class="ex">
     <p>Exemplul 3 - Verificare Cookie</p>
-    <button class="btn run" onclick="checkCookie()">Run</button>
-    <button class="btn clear" onclick="clear2()">Clear</button>
-    <code id="out2"></code>
-</div>
-
-<div class="ex">
-    <p>Exemplul 4 - Citire valoare Cookie</p>
-    <button class="btn run" onclick="getValue()">Run</button>
+    <button class="btn run" onclick="checkCookie()">Rulează</button>
     <button class="btn clear" onclick="clear3()">Clear</button>
     <code id="out3"></code>
 </div>
 
 <div class="ex">
+    <p>Exemplul 4 - Citire valoare Cookie</p>
+    <button class="btn run" onclick="getValue()">Rulează</button>
+    <button class="btn clear" onclick="clear4()">Clear</button>
+    <code id="out4"></code>
+</div>
+
+<div class="ex">
     <p>Exemplul 5 - Ștergere Cookies</p>
-    <button class="btn run" onclick="deleteCookie()">Run</button>
+    <button class="btn run" onclick="deleteCookie()">Rulează</button>
 </div>
 
 </body>
